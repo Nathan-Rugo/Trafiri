@@ -1,0 +1,58 @@
+<!--
+HTML Structure for Homepage (index.html)
+
+<!DOCTYPE html>  - Defines the document type and version of HTML
+<html lang="en"> - Specifies the language of the document
+<head>           - Contains meta-information about the document
+<meta charset="UTF-8"> - Sets the character encoding for the document
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> - Ensures proper scaling on mobile devices
+<title>Trafiri: Discover Hidden Gems in Kenya</title> - Sets the title of the webpage
+<link rel="stylesheet" href="styles.css"> - Links the external CSS file for styling
+<link rel="icon" type="image/png" href="logoicon.png"> - Links the favicon for the webpage
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>          - Navigation link to the homepage
+                <li><a href="#">Places</a></li>        - Navigation link to the places page
+                <li><a href="#">Activities</a></li>    - Navigation link to the activities page
+                <li><a href="#">Login</a></li>         - Navigation link to the login page
+                <li><a href="#">Contact</a></li>       - Navigation link to the contact page
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="welcome">
+        <h1>Welcome to Trafiri</h1>                  - Main welcome heading
+        <p>Discover Hidden Gems in Kenya 🌍🇰🇪</p>   - Subtitle with a brief description
+        <p>Karibu na ugundue uzuri wa Kenya na Trafiri! 🦁🌄</p> - elcome message
+    </section>
+    
+    <section class="featured">
+        <h2>Featured Destinations</h2>               - Heading for the featured destinations section
+        <div class="destination">
+            <img src="destination1.jpg" alt="Destination 1"> - Image for destination 1
+            <h3>Destination 1</h3>                   - Heading for destination 1
+            <p>Explore the beauty of this amazing place.</p> - Description of destination 1
+        </div>
+        <div class="destination">
+            <img src="destination2.jpg" alt="Destination 2"> - Image for destination 2
+            <h3>Destination 2</h3>                   - Heading for destination 2
+            <p>Discover hidden gems and exciting adventures.</p> - Description of destination 2
+        </div>
+        <div class="destination">
+            <img src="destination3.jpg" alt="Destination 3"> - Image for destination 3
+            <h3>Destination 3</h3>                   - Heading for destination 3
+            <p>Experience the culture and beauty of Kenya.</p> - Description of destination 3
+        </div>
+    </section>
+    
+    <footer>
+        <p>Contact us at: <a href="mailto:info@trafiri.com">info@trafiri.com</a></p> - Contact email link (Note for you: we can create a org email for feedback!)
+        <p>&copy; 2024 Trafiri. All rights reserved.</p>  - Copyright notice
+    </footer>
+</body>
+</html>
+-->

@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #BB0000;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.welcome {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.welcome h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.featured {
+    padding: 20px;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.destination {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.destination img {
+    width: 100%;
+    height: auto;
+}
+
+.destination h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.destination p {
+    font-size: 1em;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
