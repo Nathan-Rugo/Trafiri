@@ -1,4 +1,4 @@
-# 📜 README for Trafiri: Discover Hidden Gems in Kenya 🌍🇰🇪
+# 📜 Trafiri: Discover Hidden Gems in Kenya 🌍🇰🇪
 
 Karibu! Welcome to Trafiri, your go-to website for discovering hidden gems in Kenya. 🌟 Whether you're a local or a tourist, Trafiri helps you explore unique and breathtaking destinations, plan activities, and find exciting things to do. Let's make your travel adventures unforgettable! 🌴🌞
 
