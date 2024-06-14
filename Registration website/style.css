@@ -3,7 +3,7 @@
 .navbar ul{
     /* removes  the bullet points */
     list-style-type: none;
-    background-color: #333;
+    background-color: #bb0000;
     /* removes the padding */
     padding: 10px;
     /* removes the margins */
@@ -34,19 +34,21 @@
 /* Sets the navigation bar to be horizontal */
 .navbar li {
     
-    height: 100px;
+    height: 50px;
     text-align:center;
+
 }
 
 
 body{
-   background-image: url(background.jpeg);
+   background-image: url(../images/beachSunset.jpg);
    background-repeat: no-repeat;
    background-position: center;
    background-attachment: fixed;
    background-size: cover;
     font-family: sans-serif;
     margin: 0px;
+    max-width: 100%;
    
 
 }
@@ -89,7 +91,7 @@ form input{
 }
 form input:focus{
      /* When the input is focused a 2px violet border appears */
-    border: 2px solid violet;
+    border: 2px solid #bb0000;
 
 }
 button{
@@ -104,7 +106,7 @@ button{
    /* sets the background color */
    background-color: cornflowerblue;
    color: black;
-   font-size: large;
+   font-size: medium;
     /* When the cursor is hovered to the button it changes to a pointer */
     cursor:pointer;
 }
@@ -115,13 +117,17 @@ p{
     margin-top: -2px;
 }
 footer {
-    background-color: #333;
+    background-color: #bb0000;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0px;
     position: relative;
     bottom: 0;
     width: 100%;
     margin-top: 10px;
+}
+footer a{
+    text-decoration: none;
+    color:#4CAF50;
 }
 

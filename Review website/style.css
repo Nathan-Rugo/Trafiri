@@ -13,7 +13,7 @@ p{
         .navbar ul{
             /* removes  the bullet points */
             list-style-type: none;
-            background-color: #333;
+            background-color: #BB0000;
             /* sets padding of 10px */
             padding: 10px;
             /* removes the margins */
@@ -48,20 +48,17 @@ p{
             text-align:center;
         }  
 body{
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: gray;
       /* Removes any default margin or padding from the body elements */
-      margin: 0px;
-    padding: 0px;
-
-    
-        background-image: url(reviewbackground.jpeg);
+        margin: 0px;
+        padding: 0px;
+        background-image: url(../images/Hiking.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
-         font-family: sans-serif;
-         margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
         
      }
      
@@ -93,7 +90,7 @@ body{
     /* Sets the h2 text to be bold */
     font-weight: bold;
      /* Sets the color of the h2 text */
-    color: aqua;
+    color: white;
     /* Sets the font size of the h2 text */
     font-size:larger;
     /* Sets the spacing between the h2 text and hr */
@@ -135,7 +132,7 @@ textarea.review-inputs {
 }
 .review-inputs:focus{
     /* When the input is focused a 2px violet border appears */
-    border: 2px solid violet;
+    border: 2px solid #BB0000;
 
 }
 .review-inputs::placeholder{
@@ -169,10 +166,11 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px ;
     position: relative;
-    bottom: 0;
+    margin-bottom: 0;
     width: 100%;
+    height:55px;
 }
 
 footer a {
