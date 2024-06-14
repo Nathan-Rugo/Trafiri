@@ -1,0 +1,181 @@
+/* This will affect every element.
+It applies a left margin of 10px */
+/* *{
+    padding: 0;
+    margin-left: 10px;
+} */
+p{
+    font-size: larger;
+    margin-left: 10px;
+}
+
+        
+        .navbar ul{
+            /* removes  the bullet points */
+            list-style-type: none;
+            background-color: #333;
+            /* sets padding of 10px */
+            padding: 10px;
+            /* removes the margins */
+            margin: 0px;
+            /* Helps clear floating elements */
+            overflow:hidden;
+            display: flex;
+            justify-content: space-around;
+            /* aligns items to the center */
+            align-items: center;
+        
+        }
+        .navbar a{
+            /* Sets the color */
+            color: aliceblue;
+            /* removes the underlinings   */
+            text-decoration: none;
+            /* Displaying the elements as a block */
+            display: block;
+            /* aligns the text to the center */
+            text-align: center;
+            
+        }
+        /* allows us to hover over the hyperlinks */
+        .navbar a:hover{
+            background-color: rgb(16, 16, 16);
+        }
+        /* Sets the navigation bar to be horizontal */
+        .navbar li {
+            
+            height: 100px;
+            text-align:center;
+        }  
+body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: gray;
+      /* Removes any default margin or padding from the body elements */
+      margin: 0px;
+    padding: 0px;
+
+    
+        background-image: url(reviewbackground.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+         font-family: sans-serif;
+         margin: 0px;
+        
+     }
+     
+    
+.review-container{
+    /* Sets the height of the review container class */
+    height: 100vh;
+    /* Sets the flexbox layout to the review container class  */
+    display: flex;
+    /* It allows the contents in the review container class to be vertically centered */
+    align-items: center;
+    /* Allows the contents in the review container class to be distributed evenly within the horizontal axis */
+    justify-content: space-evenly;
+}
+
+.review-left{
+    display: flex;
+    /* Arranges the elements in the review left section in a column */
+      flex-direction: column;
+      /* Arranges the elements in the review left section to the left of the container  */
+    align-items: start;
+    /* Sets a gap of 20px between each elements in the review left section  */
+    gap: 20px;
+    margin-left: 10px;
+    font-size: larger;
+}
+.review-left-title h2{
+
+    /* Sets the h2 text to be bold */
+    font-weight: bold;
+     /* Sets the color of the h2 text */
+    color: aqua;
+    /* Sets the font size of the h2 text */
+    font-size:larger;
+    /* Sets the spacing between the h2 text and hr */
+    margin-bottom: 1px;
+
+}
+.review-left-title hr{
+    /* It makes the default border non-existent */
+    border: none;
+    /* Sets the width of hr */
+    width: 120px;
+    /* Sets the height of hr */
+    height:5px;
+    /* Sets the background color of hr */
+    background-color: aqua;
+    /* Makes the corners of hr become rounded with a radius of 10px */
+    border-radius: 10px;
+    /* Sets the spacing between hr and the adjacent name label  */
+    margin-bottom: 1px ;
+}
+.review-inputs{
+    width: 400px;
+    height: 45px ;
+    border:none;
+    /* Makes the outline non-existent when focused */
+    outline: none;
+    /* Sets the padding to the left  */
+    padding-left: 30px;
+    font-weight: 450;
+    color: black;
+    border-radius:50px;
+    font-size: large;
+
+}
+textarea.review-inputs {
+    /* Allows the textarea to resize itself vertically whenever the window size is resized */
+    resize: vertical;
+    
+}
+.review-inputs:focus{
+    /* When the input is focused a 2px violet border appears */
+    border: 2px solid violet;
+
+}
+.review-inputs::placeholder{
+    color: black;
+    font-size: medium;
+}
+.submit-button{
+    display:flex;
+    align-items: center;
+    padding: 15px,30px;
+    font-size: 20px;
+    color: royalblue;
+    gap: 10px;
+    border:none;
+    border-radius: 50px;
+    background:linear-gradient(270deg,orange,hotpink);
+    /* When the cursor is hovered to the button it changes to a pointer */
+    cursor:pointer;
+    margin-bottom: 10px;
+   
+    
+
+}
+.submit-button img{
+    /* Sets the height of the image in the submit button */
+    height: 15px;
+    
+  
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}

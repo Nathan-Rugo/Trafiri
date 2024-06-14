@@ -1,0 +1,127 @@
+
+
+.navbar ul{
+    /* removes  the bullet points */
+    list-style-type: none;
+    background-color: #333;
+    /* removes the padding */
+    padding: 10px;
+    /* removes the margins */
+    margin: 0px;
+    /* Helps clear floating elements */
+    overflow:hidden;
+    display: flex;
+    justify-content: space-around;
+    /* aligns items to the center */
+    align-items: center;
+
+}
+.navbar a{
+    /* Sets the color */
+    color: aliceblue;
+    /* removes the underlinings   */
+    text-decoration: none;
+    /* Displaying the elements as a block */
+    display: block;
+    /* aligns the text to the center */
+    text-align: center;
+    
+}
+/* allows us to hover over the hyperlinks */
+.navbar a:hover{
+    background-color: rgb(16, 16, 16);
+}
+/* Sets the navigation bar to be horizontal */
+.navbar li {
+    
+    height: 100px;
+    text-align:center;
+}
+
+
+body{
+   background-image: url(background.jpeg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+    font-family: sans-serif;
+    margin: 0px;
+   
+
+}
+
+.register-container{
+    width: 360px;
+    height:620px;
+    margin: auto;
+    background-color:white ;
+    border-radius: 3px;
+}
+.login-container{
+    width: 350px;
+    height: 290px;
+    margin:auto;
+    background-color: white;
+    border-radius: 2px;
+ 
+}
+h1{
+    text-align:center;
+    padding-top: 15px;
+}
+form{
+    width: 300px;
+    margin-left :20px;
+}
+form label{
+    display:flex;
+    margin-top: 20px;
+    font-size: larger;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border:none ;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline:none;
+}
+form input:focus{
+     /* When the input is focused a 2px violet border appears */
+    border: 2px solid violet;
+
+}
+button{
+    /* Sets the width */
+   width:320px;
+   /* sets the height  */
+   height: 30px;
+   /* sets the size of the margin between the button and the textfield above */
+   margin-top: 10px;
+   border:none;
+   border-radius: 6px;
+   /* sets the background color */
+   background-color: cornflowerblue;
+   color: black;
+   font-size: large;
+    /* When the cursor is hovered to the button it changes to a pointer */
+    cursor:pointer;
+}
+p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: larger;
+    margin-top: -2px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+

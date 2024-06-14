@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review page</title>
+    <!-- Linking css to html externally -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- adding the header -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">Activities</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header> 
+    
+    <!-- Creates an introductory message of the review page -->
+    <p>Welcome to the review page. <br>
+    In this page you will find several reviews about places you would like to visit.<br>
+    Feel free to add your reviews to our website. </p>
+
+    <!-- The classes above are also used for styling purposes  -->
+    <!-- Creating a review form -->
+     <!-- This is the main container -->
+     <div class="review container">
+        <!-- Wraps the form and other elements related to the form -->
+        <div class="fields">
+            <!-- Creates the form -->
+             <!-- action is empty indicating that the form will appear to the review page -->
+              <!-- method="post"-ensures that data is sent securely -->
+        <form action="" method="post" class="review-left"> 
+            <div class="review-left-title">
+                <!-- Creates the title used for the form -->
+                <h2>Give your review</h2>
+                <!-- This will underline our h2 -->
+                <hr>
+            </div>
+            <!-- Adding inputs to our form -->
+             <!-- Required makes these fields mandatory -->
+              <!-- Displays that the above input field is for the Name -->
+             <label for="name">Name:</label>
+             <input type="text" name="name" placeholder="Your name" class="review-inputs" required>
+             <!-- Displays that the above input field is for the Email -->
+             <label for="email">Email:</label>
+             <input type="email" name="email" placeholder="Your email" class="review-inputs" required>
+
+              <!-- Displays that the above input field is for the Destination -->
+             <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Place you visited" class="review-inputs" required>
+                 
+                <!-- Displays that the above input field is for the Ratings -->
+                <label for="rating">Rating:</label>
+                <!-- Displays a dropdown menu enabling the users to select a specific rating -->
+                <select id="rating" name="rating" class="review-inputs" required>
+                    <!-- Displays the possible ratings available -->
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+            
+             <label for="review">Review:</label>
+             <!-- Creating the message box -->
+              <textarea name="message" placeholder="Write your review here" class="review-inputs" required></textarea>
+              <!-- Creates the submit button -->
+              <button type="submit" class="submit-button">Submit <img src="Arrow icon.jpeg" alt="An arrow icon"> </button>
+ 
+        </form>
+        
+     </div>
+     <!-- Adding the footer -->
+     <footer>
+        <p>Contact us at: <a href="mailto:nathan.githinji@strathmore.edu">info@trafiri.com</a></p>
+        <p>&copy; 2024 Trafiri. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
