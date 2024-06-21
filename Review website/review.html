@@ -17,15 +17,15 @@
                 <li><a href="../activities.html">Activities</a></li>
                 <li><a href="../Registration website/login.html">Login</a></li>
                 <li><a href="review.html">Review</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
         </nav>
     </header> 
     
     <!-- Creates an introductory message of the review page -->
-    <p>Welcome to the review page. <br>
+    <!-- <p>Welcome to the review page. <br>
     In this page you will find several reviews about places you would like to visit.<br>
-    Feel free to add your reviews to our website. </p>
+    Feel free to add your reviews to our website. </p> -->
 
     <!-- The classes above are also used for styling purposes  -->
     <!-- Creating a review form -->
@@ -46,18 +46,18 @@
             <!-- Adding inputs to our form -->
              <!-- Required makes these fields mandatory -->
               <!-- Displays that the above input field is for the Name -->
-             <label for="name">Name:</label>
+             <label for="name">Name</label>
              <input type="text" name="name" placeholder="Your name" class="review-inputs" required>
              <!-- Displays that the above input field is for the Email -->
-             <label for="email">Email:</label>
+             <label for="email">Email</label>
              <input type="email" name="email" placeholder="Your email" class="review-inputs" required>
 
               <!-- Displays that the above input field is for the Destination -->
-             <label for="destination">Destination:</label>
+             <label for="destination">Destination</label>
                 <input type="text" id="destination" name="destination" placeholder="Place you visited" class="review-inputs" required>
                  
                 <!-- Displays that the above input field is for the Ratings -->
-                <label for="rating">Rating:</label>
+                <label for="rating">Rating</label>
                 <!-- Displays a dropdown menu enabling the users to select a specific rating -->
                 <select id="rating" name="rating" class="review-inputs" required>
                     <!-- Displays the possible ratings available -->
@@ -68,9 +68,9 @@
                     <option value="1">1 - Poor</option>
                 </select>
             
-             <label for="review">Review:</label>
+             <label for="review">Review</label>
              <!-- Creating the message box -->
-              <textarea name="message" placeholder="Write your review here" class="review-inputs" required></textarea>
+              <input type="text" placeholder="Write your review here" class="review-inputs" required></input>
               <!-- Creates the submit button -->
               <button type="submit" class="submit-button">Submit <img src="Arrow icon.jpeg" alt="An arrow icon"> </button>
  

@@ -13,35 +13,42 @@ img{
     width:300px;
     height:250px;
 }
-
-    header {
-        background-color: #BB0000;
-        color: white;
-        padding: 10px 0;max-width: 100%;
-    }
+   
+header {
+    background-color: #81A263;
+    color: black;
+    padding: 10px 0;
+    max-width: 100%;
+    position: sticky;
+    top:0;   
+    margin-top:0; 
+}
     
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        text-align: center;
-    }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
     
-    nav ul li {
-        display: inline;
-        margin: 0 15px;
-    }
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
     
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        background-color: #BB0000;
-    }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
 header .navbar{
     justify-content: space-between;
-
 }
+
+nav a:hover{
+    background-color: rgb(16, 16, 16);
+}
+
 header .navbar a{
     text-decoration: none;
     color:white;
@@ -53,22 +60,8 @@ header .navbar a{
     margin-top:30px;
     margin-bottom: 10px
 }
-.title{
-    font-size:35px;
-}
-body .search{
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 8px;
-    margin-top: 10px;
-    border-color: black;
-    color:black;
-}
-input[type="text"] {
-    padding: 6px 10px;
-    border-radius: 12px;
-    border: 1px solid #131212;
-}
+
+
 
 
 .things-to-do{
@@ -77,9 +70,9 @@ input[type="text"] {
     background-color:white;
     padding: 50px 6px;
     float: left;
-    width:100%;
-    
+    width:100%;    
 }
+
 .things-to-do div{
     background-color:aliceblue;
     margin:10px;
@@ -90,11 +83,13 @@ input[type="text"] {
     width:20%;
     border-radius: 10px;
 }
+
 .things-to-do img{
     max-width: 100%;
     height: auto;
 }
- footer {
+
+footer {
     background-color: #333;
     color: white;
     text-align: center;
