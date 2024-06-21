@@ -5,6 +5,9 @@
     font-size: 1rem;
     max-width:100%;
 }
+body{
+    margin:0px;
+}
 .logo{
     text-decoration: none;
     color:white
