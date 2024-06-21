@@ -45,7 +45,15 @@ nav ul li a {
 }
 .login-container{
     width: 350px;
-    height: 300px;
+    height: 350px;
+    margin:auto;
+    background-color: white;
+    border-radius: 2px;
+    
+}
+.reset-container{
+    width: 350px;
+    height: 370px;
     margin:auto;
     background-color: white;
     border-radius: 2px;
@@ -104,6 +112,10 @@ footer {
 footer a {
     color: #4CAF50;
     text-decoration: none;
+}
+.register-container p {
+    margin-left: 20px;
+
 }
 
 
