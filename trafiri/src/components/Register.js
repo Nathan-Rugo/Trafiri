@@ -8,14 +8,16 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if passwords match
     if (password !== confirmPassword) {
-      alert('Passwords do not match');
+      setMessage('Passwords do not match');
+      setMessageType('error');
       return;
     }
 
@@ -30,13 +32,17 @@ const Register = () => {
       const response = await axios.post('http://localhost:3001/register', userData);
 
       if (response.status === 200) {
-        navigate('/login');
+        setMessage('Registration successful. Please check your email for confirmation.');
+        setMessageType('success');
+        setTimeout(() => navigate('/login'), 3000);
       } else {
-        alert(`Registration failed: ${response.data.error}`);
+        setMessage(response.data.message);
+        setMessageType('error');
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      alert('Registration failed. Please try again later.');
+      console.error('Registration error:',error);
+      setMessage('Registration failed: ' + error.response.data.message);
+      setMessageType('error');
     }
   };
 
@@ -86,6 +92,11 @@ const Register = () => {
         />
         <button type="submit">Register</button>
       </form>
+      {message && (
+        <div className={messageType === 'success' ? 'message success' : 'message error'}>
+          {message}
+        </div>
+      )}
       <p>Already have an account? <a href="/login">Login here</a></p>
     </div>
   );

@@ -1,9 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 const port = 3001;
@@ -11,12 +14,15 @@ const port = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+const caPath = path.join(__dirname, 'ca.pem');
+
 const db = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'c0l@nd3r',
-    database: 'db_trafiri'
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    ssl: fs.existsSync(caPath) ? { ca: fs.readFileSync(caPath) } : false,
 });
 
 db.connect(err => {
@@ -27,7 +33,6 @@ db.connect(err => {
     console.log('MySQL connected...');
 });
 
-// Endpoint to register a new user
 app.post('/register', async (req, res) => {
     try {
         const { firstName, lastName, email, password } = req.body;
@@ -36,13 +41,52 @@ app.post('/register', async (req, res) => {
         }
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const sql = 'INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)';
-        db.query(sql, [firstName, lastName, email, hashedPassword], (err, result) => {
+        const sql1 = 'SELECT * FROM users WHERE email = ?';
+        db.query(sql1, [email], (err, results) => {
             if (err) {
-                console.error('Error inserting user:', err);
+                console.error('Error checking user:', err);
                 return res.status(500).json({ message: 'Server error' });
             }
-            res.json({ message: 'User registered' });
+
+            if (results.length > 0) {
+                return res.status(400).json({ message: 'Email already exists' });
+            }
+
+            const sql = 'INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)';
+            db.query(sql, [firstName, lastName, email, hashedPassword], (err, result) => {
+                if (err) {
+                    console.error('Error inserting user:', err);
+                    return res.status(500).json({ message: 'Server error' });
+                }
+                res.json({ message: 'User registered' });
+
+                // Send a thank you email
+                const transporter = nodemailer.createTransport({
+                    host: process.env.EMAIL_HOST,
+                    port: 587,
+                    secure: false,
+                    auth: {
+                        user: process.env.EMAIL_USER,
+                        pass: process.env.EMAIL_PASSWORD
+                    },
+                    tls: {
+                        rejectUnauthorized: false
+                    }
+                });
+
+                transporter.sendMail({
+                    from: process.env.EMAIL_USER,
+                    to: email,
+                    subject: 'Thank you for registering!',
+                    text: `Dear ${firstName},\n\nThank you for registering on our platform. We're excited to have you with us.\n\nBest regards,\nYour Team`
+                }, (error, info) => {
+                    if (error) {
+                        console.error('Error sending email:', error);
+                    } else {
+                        console.log('Email sent:', info.response);
+                    }
+                });
+            });
         });
     } catch (error) {
         console.error('Error during registration:', error);
@@ -50,11 +94,9 @@ app.post('/register', async (req, res) => {
     }
 });
 
-// Endpoint to authenticate user login
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
-    // Retrieve user from database based on email
     const sql = 'SELECT * FROM users WHERE email = ?';
     db.query(sql, [email], async (err, results) => {
         if (err) {
@@ -67,7 +109,6 @@ app.post('/login', (req, res) => {
 
         const user = results[0];
 
-        // Compare password with hashed password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ success: false, error: 'Invalid email or password' });
@@ -77,44 +118,39 @@ app.post('/login', (req, res) => {
     });
 });
 
-// Endpoint to handle contact form submissions
 app.post('/contact/send', async (req, res) => {
     const { name, email, subject, message } = req.body;
 
-    // Validate email and other fields here
     if (!email || !name || !subject || !message) {
         return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
 
-    // Create a nodemailer transporter using SMTP
     const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: process.env.EMAIL_HOST,
         port: 587,
         secure: false,
         auth: {
-            user: 'infotrafiri@gmail.com',
-            pass: 'czxa krwv gyve gvpa'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASSWORD
         },
         tls: {
-            rejectUnauthorized: false // Add this option to allow insecure TLS connections
+            rejectUnauthorized: false
         }
     });
 
     try {
-        // Send email to your support team
         await transporter.sendMail({
             from: email,
-            to: 'infotrafiri@gmail.com',
+            to: process.env.EMAIL_USER,
             subject: subject,
             text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
         });
 
-        // Send thank you email to the user
         await transporter.sendMail({
-            from: 'infotrafiri@gmail.com',
+            from: process.env.EMAIL_USER,
             to: email,
             subject: 'Thank you for contacting us!',
-            text: `Dear ${name},\n\nThank you for reaching out to us. We have received your message:\n\n${subject}\n\n${message}\n\nWe will get back to you shortly.\n\nBest regards,\n\nYour Support Team`
+            text: `Dear ${name},\n\nThank you for reaching out to us. We have received your message:\n\n${subject}\n\n${message}\n\nWe will get back to you shortly.\n\nBest regards,\nYour Support Team`
         });
 
         res.json({ success: true });
@@ -124,7 +160,6 @@ app.post('/contact/send', async (req, res) => {
     }
 });
 
-// Start the server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
