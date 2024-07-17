@@ -5,6 +5,7 @@ import axios from 'axios';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -13,18 +14,22 @@ const Login = () => {
       const response = await axios.post('http://localhost:3001/login', { email, password });
 
       if (response.status === 200) {
-        navigate('/');
+        setMessage(response.data.message);
+        setTimeout(() => {
+          navigate('/');
+        }, 2000); // Redirect after 2 seconds
       } else {
-        alert('Login failed');
+        setMessage('Login failed. Please check if you have entered the right credentials');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to fetch');
+      setMessage('Failed to fetch. Please check if you have entered the right credentials.');
     }
   };
 
   return (
     <div className="login-container">
+      {message && <p className="login-message">{message}</p>}
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label>Email</label>

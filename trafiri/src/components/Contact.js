@@ -21,11 +21,10 @@ const Contact = () => {
         e.preventDefault();
 
         try {
-            // Make sure your server endpoint matches the URL here
+            // Server endpoint to send email
             const response = await axios.post('http://localhost:3001/contact/send', formData, {
                 headers: {
                     'Content-Type': 'application/json',
-                    // Add any other required headers here
                 }
             });
 

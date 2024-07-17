@@ -58,7 +58,7 @@ app.post('/register', async (req, res) => {
                     console.error('Error inserting user:', err);
                     return res.status(500).json({ message: 'Server error' });
                 }
-                res.json({ message: 'User registered' });
+                res.json({ message: 'You are Registered. Check email' });
 
                 // Send a thank you email
                 const transporter = nodemailer.createTransport({
@@ -114,7 +114,7 @@ app.post('/login', (req, res) => {
             return res.status(401).json({ success: false, error: 'Invalid email or password' });
         }
 
-        res.json({ success: true, message: 'User logged in' });
+        res.json({ success: true, message: 'You are logged in' });
     });
 });
 
@@ -159,6 +159,64 @@ app.post('/contact/send', async (req, res) => {
         res.status(500).json({ success: false, error: 'Failed to send email' });
     }
 });
+
+app.post('/reset', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if (!email || !password) {
+            return res.status(400).json({ message: 'All fields are required' });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const sql = 'UPDATE users SET password = ? WHERE email = ?';
+        db.query(sql, [hashedPassword, email], (err, result) => {
+            if (err) {
+                console.error('Error updating password:', err);
+                return res.status(500).json({ message: 'Server error' });
+            }
+            if (result.affectedRows === 0) {
+                return res.status(404).json({ message: 'Email not found' });
+            }
+            
+            res.json({ message: 'Password reset successful' });
+
+            // Send confirmation email
+            const transporter = nodemailer.createTransport({
+                host: process.env.EMAIL_HOST,
+                port: 587,
+                secure: false,
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASSWORD
+                },
+                tls: {
+                    rejectUnauthorized: false
+                },
+                debug: true, // debug mode
+                logger: true // logger
+            });
+
+            transporter.sendMail({
+                from: process.env.EMAIL_USER,
+                to: email,
+                subject: 'Password Reset Successful',
+                text: `Dear user,\n\nYour password has been successfully reset. You can now log in with your new password.\n\nBest regards,\nYour Team`
+            }, (error, info) => {
+                if (error) {
+                    console.error('Error sending email:', error);
+                } else {
+                    console.log('Email sent:', info.response);
+                }
+            });
+        });
+
+    } catch (error) {
+        console.error('Error during password reset:', error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

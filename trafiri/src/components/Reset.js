@@ -6,6 +6,7 @@ const Reset = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -13,7 +14,7 @@ const Reset = () => {
 
     // Check if passwords match
     if (password !== confirmPassword) {
-      alert('Passwords do not match');
+      setMessage('Passwords do not match');
       return;
     }
 
@@ -23,22 +24,28 @@ const Reset = () => {
     };
 
     try {
+      // Send reset request to server
       const response = await axios.post('http://localhost:3001/reset', userData);
 
       if (response.status === 200) {
-        navigate('/login');
+        setMessage('Password reset successful');
+        setTimeout(() => {
+          navigate('/login');
+        }, 2000); // Redirect after 2 seconds
       } else {
-        alert(`Password reset failed: ${response.data.error}`);
+        setMessage(`Password reset failed: ${response.data.message}`);
       }
     } catch (error) {
       console.error('Reset error:', error);
-      alert('Password reset failed. Please try again later.');
+      setMessage('Password reset failed. Please try again later.');
     }
   };
 
   return (
+    // Reset password form
     <div className="reset-container">
       <h1>Reset Password</h1>
+      {message && <p className="reset-message">{message}</p>}
       <form onSubmit={handleSubmit}>
         <label>Email</label>
         <input
@@ -65,8 +72,10 @@ const Reset = () => {
           required
         />
         <button type="submit">Submit</button>
-        <p>Do not have an account? <a href="/login">Login</a></p>
+        <p>Don't have an account? <a href="/register">Register here</a></p>
       </form>
+      
+
     </div>
   );
 };

@@ -39,10 +39,10 @@
 .Logo-img {
   height: 40px;
   width: 40px;
-  margin: auto; /* Center horizontally */
-  display: block; /* Ensures block-level display */
+  margin: auto;   
+  display: block;
 }
-
+/*
 header {
   background-color: #81A263;
   color: white;
@@ -61,13 +61,14 @@ header {
   z-index: 10;
   width: 100%;
 }
-
+*/
 /* Link Styles */
 .App-link {
   color: #61dafb;
 }
 
-/* Navigation Styles */
+/* Navigation Styles 
+
 .navigation ul {
   list-style-type: none;
   padding: 0;
@@ -87,6 +88,116 @@ header {
 
 .navigation ul li a:hover {
   background-color: rgb(16, 16, 16);
+}
+*/
+
+/* New Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #81A263;
+  border-bottom: 1px solid #81A263;
+}
+
+.header-logo .Logo-img {
+  height: 50px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation .list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation .list li {
+  margin: 0 10px;
+}
+
+.navigation .list li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-login {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin-left: 20px;
+}
+
+.nav-login .login-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-login .login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-login .username {
+  margin-left: 10px;
+  color: #000;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.header-logo {
+  display: inline-block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-login {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.login-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.username {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }
 
 /*Home Page*/
@@ -309,6 +420,81 @@ textarea {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.login-message {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.reset-container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.reset-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reset-container form {
+  display: block;
+  flex-direction: column;
+  margin: auto;
+}
+
+.reset-container label {
+  margin-bottom: 5px;
+}
+
+.reset-container input {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reset-container button {
+  padding: 10px;
+  background-color: #45a049;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;;
+  display: block;
+}
+
+.reset-container button:hover {
+  background-color: #45a049;
+}
+
+.reset-container .reset-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.reset-container .reset-message {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.reset-container .reset-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
+
 /*Activities Page*/
 .activities-container {
   padding: 50px;
@@ -436,14 +622,14 @@ label {
   padding: 20px;
   text-align: center;
   margin: 30px;
-  width: 300px; /* Fixed width */
-  height: 400px; /* Fixed height for consistency */
+  width: 300px;
+  height: 400px; 
 }
 
 .places-card img {
   max-width: 100%;
-  height: 60%; /* Adjust image height as needed */
-  object-fit: cover; /* Maintain aspect ratio */
+  height: 60%; 
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -452,6 +638,5 @@ label {
   font-size: 1.2rem;
   color: #333333;
   margin-top: 10px;
-  line-height: 1.4; /* Ensure consistent line height */
+  line-height: 1.4;
 }
-
