@@ -1,3 +1,4 @@
+// Activities component displays the activities that can be done in Kenya with images
 import React from 'react';
 import Golf from '../assets/golf.jpeg';
 import Cycling from '../assets/cycling.jpeg';

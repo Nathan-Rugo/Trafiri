@@ -1,3 +1,7 @@
+// Contact form component that sends an email to the server using the Axios library. 
+// The server then sends the email to the specified recipient. 
+// The component displays a success or error message based on the response from the server.
+
 import React, { useState } from 'react';
 import axios from 'axios';
 

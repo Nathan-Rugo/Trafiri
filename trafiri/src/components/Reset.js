@@ -1,14 +1,18 @@
+// Reset password component that allows users to reset their password by providing their email address and new password. 
+// The component sends a POST request to the server with the email and password, and if the request is successful, the user is redirected to the login page. 
+// If the request fails, an error message is displayed.
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Reset = () => {
+  // State variables to store the user's email, password, and confirm password values, as well as the message to display to the user
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -17,7 +21,7 @@ const Reset = () => {
       setMessage('Passwords do not match');
       return;
     }
-
+    // User data to send to the server
     const userData = {
       email,
       password,
@@ -42,7 +46,7 @@ const Reset = () => {
   };
 
   return (
-    // Reset password form
+    // Reset password form with email, password, and confirm password input fields
     <div className="reset-container">
       <h1>Reset Password</h1>
       {message && <p className="reset-message">{message}</p>}

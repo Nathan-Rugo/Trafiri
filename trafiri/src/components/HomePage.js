@@ -1,3 +1,4 @@
+// Home Page Component in React Application with Trafiri Branding and Images of Popular Destinations and Activities in Kenya 
 import React from 'react';
 import VideoBackground from '../assets/video.mp4';
 import Karura from '../assets/karura.jpeg';
@@ -10,6 +11,7 @@ import Picnicking from '../assets/Picnicking.jpg';
 
 const HomePage = () => {
     return (
+        // Home page with video background and featured destinations and activities
         <div>                
             <section className="welcome">  
                 <video autoPlay muted loop playsInline className="video">

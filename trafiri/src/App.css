@@ -1,3 +1,5 @@
+/* Styles */
+
 /* General Styles */
 .App {
   text-align: center;
@@ -67,29 +69,6 @@ header {
   color: #61dafb;
 }
 
-/* Navigation Styles 
-
-.navigation ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-.navigation ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.navigation ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.navigation ul li a:hover {
-  background-color: rgb(16, 16, 16);
-}
-*/
 
 /* New Header Styles */
 header {
@@ -198,6 +177,63 @@ header {
   border-radius: 0.25rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
+}
+
+.header-logo {
+  display: inline-block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-login {
+  display: inline-block;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.login-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.username {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  display: block;
+}
+
+.user-change {
+  background-color: #81A263;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  display: block;
+}
+
+.user-change:hover {
+  background-color: #81A263;
 }
 
 /*Home Page*/

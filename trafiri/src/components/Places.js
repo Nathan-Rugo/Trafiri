@@ -1,3 +1,4 @@
+// Places component to display a list of places to visit in Kenya with images and brief descriptions of each place
 import React from "react";
 import karuraImage from "../assets/karura.jpeg";
 import nnpImage from "../assets/nnp.jpg";

@@ -1,3 +1,4 @@
+// Register component for user registration
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -47,8 +48,14 @@ const Register = () => {
   };
 
   return (
+    // Register form with first name, last name, email, password, and confirm password input fields
     <div className="register-container">
       <h1>Sign up</h1>
+      {message && (
+        <div className={messageType === 'success' ? 'message success' : 'message error'}>
+          {message}
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <label>First Name</label>
         <input
@@ -92,11 +99,6 @@ const Register = () => {
         />
         <button type="submit">Register</button>
       </form>
-      {message && (
-        <div className={messageType === 'success' ? 'message success' : 'message error'}>
-          {message}
-        </div>
-      )}
       <p>Already have an account? <a href="/login">Login here</a></p>
     </div>
   );

@@ -1,3 +1,4 @@
+// Review component to take review from the user and submit it to the server for storage and display on the website
 import React from "react";
 import arrowIcon from "../assets/Arrow icon.jpeg"; // Adjust the path as per your project structure
 

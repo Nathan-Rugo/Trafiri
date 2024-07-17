@@ -1,3 +1,4 @@
+// Simple server to handle user registration, login, password reset, and contact form submission
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -34,24 +35,25 @@ db.connect(err => {
 });
 
 app.post('/register', async (req, res) => {
+    // Register user on the platform and send a confirmation email to the user
     try {
         const { firstName, lastName, email, password } = req.body;
         if (!firstName || !lastName || !email || !password) {
             return res.status(400).json({ message: 'All fields are required' });
         }
         const hashedPassword = await bcrypt.hash(password, 10);
-
+        // Check if email already exists in database
         const sql1 = 'SELECT * FROM users WHERE email = ?';
         db.query(sql1, [email], (err, results) => {
             if (err) {
                 console.error('Error checking user:', err);
                 return res.status(500).json({ message: 'Server error' });
             }
-
+            // If email exists, return an error message
             if (results.length > 0) {
                 return res.status(400).json({ message: 'Email already exists' });
             }
-
+            // Insert user into database if email does not exist
             const sql = 'INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)';
             db.query(sql, [firstName, lastName, email, hashedPassword], (err, result) => {
                 if (err) {
@@ -60,7 +62,7 @@ app.post('/register', async (req, res) => {
                 }
                 res.json({ message: 'You are Registered. Check email' });
 
-                // Send a thank you email
+                // Send a thank you email to the user who registered on the platform
                 const transporter = nodemailer.createTransport({
                     host: process.env.EMAIL_HOST,
                     port: 587,
@@ -73,12 +75,12 @@ app.post('/register', async (req, res) => {
                         rejectUnauthorized: false
                     }
                 });
-
+                // Send email to user confirming registration
                 transporter.sendMail({
                     from: process.env.EMAIL_USER,
                     to: email,
                     subject: 'Thank you for registering!',
-                    text: `Dear ${firstName},\n\nThank you for registering on our platform. We're excited to have you with us.\n\nBest regards,\nYour Team`
+                    text: `Dear ${firstName}${lastName},\n\nThank you for registering on our platform. We're excited to have you with us.\n\nBest regards,\nYour Team`
                 }, (error, info) => {
                     if (error) {
                         console.error('Error sending email:', error);
@@ -96,7 +98,7 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
-
+    // Check if email and password are provided in the request
     const sql = 'SELECT * FROM users WHERE email = ?';
     db.query(sql, [email], async (err, results) => {
         if (err) {
@@ -106,7 +108,7 @@ app.post('/login', (req, res) => {
         if (results.length === 0) {
             return res.status(401).json({ success: false, error: 'Invalid email or password' });
         }
-
+        // Check if password is correct
         const user = results[0];
 
         const isMatch = await bcrypt.compare(password, user.password);
@@ -114,9 +116,19 @@ app.post('/login', (req, res) => {
             return res.status(401).json({ success: false, error: 'Invalid email or password' });
         }
 
-        res.json({ success: true, message: 'You are logged in' });
+        // Update last login time for user in database
+        const updateSql = 'UPDATE users SET last_login = NOW() WHERE email = ?';
+        db.query(updateSql, [email], (err) => {
+            if (err) {
+                console.error('Error updating last login:', err);
+                return res.status(500).json({ success: false, error: 'Server error' });
+            }
+
+            res.json({ success: true, message: 'User logged in', user });
+        });
     });
 });
+
 
 app.post('/contact/send', async (req, res) => {
     const { name, email, subject, message } = req.body;
@@ -124,7 +136,7 @@ app.post('/contact/send', async (req, res) => {
     if (!email || !name || !subject || !message) {
         return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
-
+    // Send email
     const transporter = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: 587,
@@ -137,7 +149,7 @@ app.post('/contact/send', async (req, res) => {
             rejectUnauthorized: false
         }
     });
-
+    // Send email to support team
     try {
         await transporter.sendMail({
             from: email,
@@ -145,7 +157,7 @@ app.post('/contact/send', async (req, res) => {
             subject: subject,
             text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
         });
-
+        // Send confirmation email to user who contacted support
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: email,
@@ -161,6 +173,7 @@ app.post('/contact/send', async (req, res) => {
 });
 
 app.post('/reset', async (req, res) => {
+    // Reset password for user
     try {
         const { email, password } = req.body;
         if (!email || !password) {
@@ -168,7 +181,7 @@ app.post('/reset', async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-
+        // Update password in database
         const sql = 'UPDATE users SET password = ? WHERE email = ?';
         db.query(sql, [hashedPassword, email], (err, result) => {
             if (err) {
@@ -193,10 +206,10 @@ app.post('/reset', async (req, res) => {
                 tls: {
                     rejectUnauthorized: false
                 },
-                debug: true, // debug mode
-                logger: true // logger
+                debug: true, // show debug output
+                logger: true // log information in console
             });
-
+            // Send email to user confirming new password
             transporter.sendMail({
                 from: process.env.EMAIL_USER,
                 to: email,

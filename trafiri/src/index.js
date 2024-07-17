@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'; // Import the reportWebVitals function to measure performance in the application
+import { UserProvider } from './contexts/UserContext'; // Import the UserProvider context provider to provide user information to all components in the application
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // Wrap the App component with the UserProvider context provider to provide user information to all components in the application
+  <UserProvider> 
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </UserProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
