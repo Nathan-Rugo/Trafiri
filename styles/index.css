@@ -7,6 +7,7 @@ body {
     box-sizing: border-box;
     max-width: 100%;   
     max-height: 100vh;
+    overflow-x: hidden;
 
 }
 img{
@@ -45,20 +46,19 @@ nav a:hover{
 }
 
 .video{
-    width:100%;
-    height: 100vh;
+    position: absolute;
+    min-width:100%;
+    height: 90vh;
     object-fit:cover;
     top: 0;
     left:0;
-    position: absolute;
     z-index: -1;
-    overflow: hidden;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .welcome {
     text-align: center;
-    padding: 70px 20px;
+    padding: 60px 20px;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -66,9 +66,7 @@ nav a:hover{
     justify-content: center;
     background-image:linear-gradient(green,#81A263)url(images);
 }
-section{
-    max-width: 209vh;
-}
+
 .welcome h1 {
     font-size: 3em;
     margin: 0;
@@ -95,9 +93,10 @@ img{
 }
 .destination {
     display: inline-block;
-    width: 30%;
-    margin: 10px;
+    width: 33%;
     vertical-align: top;
+    flex-wrap: wrap;
+
 }
 
 .destination img {
@@ -106,7 +105,7 @@ img{
 }
 
 .destination h3 {
-    font-size: 20px;
+    font-size: 15px;
     margin: 10px 0;
 }
 

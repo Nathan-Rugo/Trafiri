@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
     <link rel="stylesheet" href="placesToGo.css">
     <title>Places</title>
 </head>
@@ -22,71 +23,68 @@
             </nav>
                 
     </header>
-        <h1>Places to go</h1>
-    <section class="container">
-            <div>
+        <h1>Places</h1> 
+         <form class = "search-tab">
+            <input type="text" class="search-bar" name="" id="search-item" placeholder="Search places...." onkeyup="search()">
+           <div class="search-icon"> <i class="fa fa-search"></i></div>
+
+            </form>
+    <section class="container" id="places-list">
+
+            <div class="destination">
                 <img src="images/karura.jpeg" alt="karura waterfall">
-                <h3>Karura Forest <br> Entry from ksh. <br> Activities: Picknicking, Bike riding </h3>
+                <h4>Karura Forest <br> Entry from ksh.100 <br> Activities: Picknicking, Bike riding </h4>
             </div>
 
-            <div>
-                <img src="images/nnp.jpg" alt="Nairobi national park"> <h3>Nairobi National Park <br> Entry from ksh. <br>Activities: Animal Watching and Safaris</h3></div>
+            <div class="destination">
+                <img src="images/nnp.jpg" alt="Nairobi national park"> <h4>Nairobi National Park <br> Entry from ksh.500 <br>Activities: Animal Watching and Safaris</h4></div>
             
-            <div>
-                <img src="images/olooluaNatureTrail.jpeg" alt="oloolua Nature Trail"> <h3>Oloolua Nature Trail <br> Entry from ksh. <br> Activities: Nature walks, picnics, site-seeing</h3></div>
+            <div class="destination">
+                <img src="images/olooluaNatureTrail.jpeg" alt="oloolua Nature Trail"> <h4>Oloolua Nature Trail <br> Entry from ksh.500 <br> Activities: Nature walks, picnics, site-seeing</h4></div>
         
-            <div>
-                <img src="images/tsavo.jpeg" alt="Tsavo"><h3>Tsavo National Park <br> Entry from ksh. <br>Activities: Animal Watching and Safaris</h3>
+            <div class="destination">
+                <img src="images/tsavo.jpeg" alt="Tsavo"><h4>Tsavo National Park <br> Entry from ksh.500 <br>Activities: Animal Watching and Safaris</h4>
             </div>
 
-            <div>
-                <img src="images/museum.jpeg" alt="Nairobi Museum"><h3>Nairobi National Museum <br> Entry from ksh. <br> Activities: History learning, </h3>
+            <div class="destination">
+                <img src="images/museum.jpeg" alt="Nairobi Museum"><h4>Nairobi National Museum <br> Entry from ksh.200 <br> Activities: History learning, </h4>
             </div>
-            <div>
-                <img src="images/nyali.jpg" alt="Nyali Beach"><h3>Nyali Beach <br> Entry:free <br> Activities: Sunbathing, swimming and picnicking. </h3>
+            <div class="destination">
+                <img src="images/nyali.jpg" alt="Nyali Beach"><h4>Nyali Beach <br> Entry:free <br> Activities: Sunbathing, swimming and picnicking. </h4>
             </div>
-            <div>
-                <img src="images/archives.jpg" alt="national archives"><h3>Nairobi National Archives <br> Entry:free <br> Activities:History and Culture,  </h3>
+            <div class="destination">
+                <img src="images/archives.jpg" alt="national archives"><h4>Nairobi National Archives <br> Entry:free <br> Activities:History and Culture,  </h4>
             </div>
-            <div>
-                <img src="images/sheldrick.jpeg" alt="a feeding elephant"><h3>Sheldrick Wildlife Trust <br> Entry:free <br> Activities:Feeding Elephants, Seeing various wildlife </h3>
+            <div class="destination">
+                <img src="images/sheldrick.jpeg" alt="a feeding elephant"><h4>Sheldrick Wildlife Trust <br> Entry:free <br> Activities:Feeding Elephants, Seeing various wildlife </h4>
             </div>
-            <div>
-                <img src="images/ngong.jpg" alt="ngong hills"><h3>Ngong Hills <br> Entry:ksh.400 <br> Activities:Hiking </h3>
+            <div class="destination">
+                <img src="images/ngong.jpg" alt="ngong hills"><h4>Ngong Hills <br> Entry:ksh.400 <br> Activities:Hiking </h4>
             </div>
-            <div>
-                <img src="images/railwayClub.jpg" alt="old trains"><h3>Railway Golf Club <br> Entry:ksh.1000 <br> Activities:Golfing </h3>
+            <div class="destination">
+                <img src="images/railwayClub.jpg" alt="old trains"><h4>Railway Golf Club <br> Entry:ksh.1000 <br> Activities:Golfing </h4>
             </div>
-            <div>
-                <img src="images/bomasOfKenya.jpg" alt="traditional huts"><h3>Bomas Of Kenya <br> Entry:ksh.400 <br> Activities:Culture and History learning, Traditional dance and music  </h3>
+            <div class="destination">
+                <img src="images/bomasOfKenya.jpg" alt="traditional huts"><h4>Bomas Of Kenya <br> Entry:ksh.400 <br> Activities:Culture and History learning, Traditional dance and music  </h4>
             </div>
-            <div>
-                <img src="images/barclaysPool.jpg" alt="Barclays Pool"><h3>Barclays Swimming Pool <br> Entry:ksh.300 <br> Activities:Swimming </h3>
-            </div>
-            
-            <div>
-                <img src="images/girrafe-center.jpg" alt="a feeding girraffe "><h3>Giraffe Center  <br> Entry:ksh.600 <br> Activities:Animal Watching and Feeding </h3>
-            </div>
-            <div>
-                <img src="images/mountKenya.jpeg" alt="Mount Kenya"><h3>Mount Kenya <br> Entry:ksh.1000 <br> Activities:Mountain Climbing </h3>
-            </div>
-            <div>
-                <img src="images/vipingoRidge.jpeg" alt="Green field"><h3>Vipingo Golfing Ridge <br> Entry:ksh.1000 <br> Activities:Golfing </h3>
+            <div class="destination">
+                <img src="images/barclaysPool.jpg" alt="Barclays Pool"><h4>Barclays Swimming Pool <br> Entry:ksh.300 <br> Activities:Swimming </h4>
             </div>
             
-
-            
-            
-
-
-            
-
-            
-            
+            <div class="destination">
+                <img src="images/girrafe-center.jpg" alt="a feeding girraffe "><h4>Giraffe Center  <br> Entry:ksh.600 <br> Activities:Animal Watching and Feeding </h4>
+            </div>
+            <div class="destination"> 
+                <img src="images/mountKenya.jpeg" alt="Mount Kenya"><h4>Mount Kenya <br> Entry:ksh.1000 <br> Activities:Mountain Climbing </h4>
+            </div>
+            <div class="destination">
+                <img src="images/vipingoRidge.jpeg" alt="Green field"><h4>Vipingo Golfing Ridge <br> Entry:ksh.1000 <br> Activities:Golfing </h4>
+            </div> 
     </section>
     <footer>
         <p>Contact us at: <a href="mailto:infotrafiri@gmail.com">info@trafiri.com</a></p>
         <p>&copy; 2024 Trafiri. All rights reserved.</p>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>

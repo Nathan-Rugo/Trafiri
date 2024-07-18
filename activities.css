@@ -7,7 +7,7 @@
 }
 body{
     margin:0px;
-   
+   background-color: #F3CA52;
 }
 .logo{
     text-decoration: none;
@@ -64,7 +64,7 @@ header .navbar a{
     text-align: center;
     font-size:30px;
     margin-top:30px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 
@@ -73,14 +73,14 @@ header .navbar a{
 .things-to-do{
     display: flex;
     flex-wrap: wrap;
-    background-color:white;
+    background-color:#F3CA52;
     padding: 50px 6px;
     float: left;
     width:100%;    
 }
 
 .things-to-do div{
-    background-color:aliceblue;
+    background-color:white;
     margin:10px;
     padding:20px;
     font-size: 40px;
@@ -93,6 +93,10 @@ header .navbar a{
 .things-to-do img{
     max-width: 100%;
     height: auto;
+}
+
+.things-to-do:hover{
+    background-color:#F3CA52 ;
 }
 
 footer {
