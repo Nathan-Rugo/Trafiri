@@ -1,0 +1,167 @@
+[
+	{
+		"placeName" : "Barclays Swimming Pool",
+		"placePrice" : 300,
+		"placeActivities" : "Swimming",
+		"image_url" : "../assets/barclaysPool.jpg",
+		"placesDesc" : "Barclays Swimming Pool is a great place for swimming and relaxing.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Bomas Of Kenya",
+		"placePrice" : 400,
+		"placeActivities" : "Culture and History learning, Traditional dance and music",
+		"image_url" : "../assets/bomasOfKenya.jpg",
+		"placesDesc" : "Bomas Of Kenya showcases traditional dances, music, and cultural artifacts.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Giraffe Center",
+		"placePrice" : 600,
+		"placeActivities" : "Animal Watching and Feeding",
+		"image_url" : "../assets/girrafe-center.jpg",
+		"placesDesc" : "Giraffe Center offers an opportunity to watch and feed giraffes up close.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Karura Forest",
+		"placePrice" : 100,
+		"placeActivities" : "Picknicking, Bike riding",
+		"image_url" : "../assets/karura.jpeg",
+		"placesDesc" : "Karura Forest is a beautiful urban forest with picnic spots and bike trails.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Mount Kenya",
+		"placePrice" : 1000,
+		"placeActivities" : "Mountain Climbing",
+		"image_url" : "../assets/mountKenya.jpeg",
+		"placesDesc" : "Mount Kenya is a popular destination for mountain climbing and adventure.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Nairobi National Archives",
+		"placePrice" : 0,
+		"placeActivities" : "History and Culture",
+		"image_url" : "../assets/archives.jpg",
+		"placesDesc" : "Nairobi National Archives provides insights into Kenya's history and culture.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Nairobi National Museum",
+		"placePrice" : 500,
+		"placeActivities" : "History learning",
+		"image_url" : "../assets/museum.jpeg",
+		"placesDesc" : "Nairobi National Museum offers a deep dive into Kenya's history and culture.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Nairobi National Park",
+		"placePrice" : 600,
+		"placeActivities" : "Animal Watching and Safaris",
+		"image_url" : "../assets/nnp.jpg",
+		"placesDesc" : "Nairobi National Park offers a unique experience to see wildlife against the backdrop of the city skyline.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Ngong Hills",
+		"placePrice" : 400,
+		"placeActivities" : "Hiking",
+		"image_url" : "../assets/ngong.jpg",
+		"placesDesc" : "Ngong Hills offers scenic hiking trails with stunning views.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Nyali Beach",
+		"placePrice" : 0,
+		"placeActivities" : "Sunbathing, swimming and picnicking",
+		"image_url" : "../assets/nyali.jpg",
+		"placesDesc" : "Nyali Beach is a great place for sunbathing, swimming, and picnicking.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Oloolua Nature Trail",
+		"placePrice" : 700,
+		"placeActivities" : "Nature walks, picnics, site-seeing",
+		"image_url" : "../assets/olooluaNatureTrail.jpeg",
+		"placesDesc" : "Oloolua Nature Trail is perfect for nature walks, picnics, and site-seeing.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Railway Golf Club",
+		"placePrice" : 1000,
+		"placeActivities" : "Golfing",
+		"image_url" : "../assets/railwayClub.jpg",
+		"placesDesc" : "Railway Golf Club is a popular spot for golfing enthusiasts.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Sheldrick Wildlife Trust",
+		"placePrice" : 0,
+		"placeActivities" : "Feeding Elephants, Seeing various wildlife",
+		"image_url" : "../assets/sheldrick.jpeg",
+		"placesDesc" : "Sheldrick Wildlife Trust is famous for its elephant orphanage and wildlife conservation efforts.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Tsavo National Park",
+		"placePrice" : 1500,
+		"placeActivities" : "Animal Watching and Safaris",
+		"image_url" : "../assets/tsavo.jpeg",
+		"placesDesc" : "Tsavo National Park is known for its vast landscapes and rich wildlife.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	},
+	{
+		"placeName" : "Vipingo Golfing Ridge",
+		"placePrice" : 1000,
+		"placeActivities" : "Golfing",
+		"image_url" : "../assets/vipingoRidge.jpeg",
+		"placesDesc" : "Vipingo Golfing Ridge is a beautiful golfing destination with scenic views.",
+		"placeReviewScore" : null,
+		"placesReview" : null,
+		"reviewerName" : null,
+		"reviewerEmail" : null
+	}
+]

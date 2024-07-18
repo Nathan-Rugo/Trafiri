@@ -96,6 +96,24 @@ app.post('/register', async (req, res) => {
     }
 });
 
+// Endpoint to fetch places
+app.get('/places', (req, res) => {
+    // Fetch places from the database based on the activity selected by the user 
+    const { activity } = req.query;
+    let query = 'SELECT * FROM places WHERE placeActivities LIKE ? OR placesDesc LIKE ?';
+    const params = [`%${activity}%`, `%${activity}%`];
+
+    db.query(query, params, (err, results) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error fetching the places');
+        } else {
+            res.status(200).json(results);
+        }
+    });
+});
+
+
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
     // Check if email and password are provided in the request
@@ -230,7 +248,21 @@ app.post('/reset', async (req, res) => {
     }
 });
 
+app.post('/review', (req, res) => {
+    const { name, email, destination, rating, review } = req.body;
+
+    const query = 'UPDATE places SET placeReviewScore = ?, placesReview = ?, reviewerName = ?, reviewerEmail = ? WHERE placeName = ?';
+    db.query(query, [rating, review, name, email, destination], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error saving the review');
+        } else {
+            res.status(200).send('Review saved successfully');
+        }
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+

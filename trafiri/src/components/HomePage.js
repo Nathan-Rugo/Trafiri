@@ -26,21 +26,22 @@ const HomePage = () => {
                 <h2>Featured Destinations</h2>
                 <div className="home-card">
                     <img src={Karura} alt="karura waterfall" />
-                    <h3>Karura Forest <br /> Entry from ksh. <br /> Activities: Picknicking, Bike riding </h3>
+                    <h3>Karura Forest <br /> Entry from ksh.100 <br /> Activities: Picknicking, Bike riding </h3>
                 </div>
 
                 <div className="home-card">
                     <img src={NationalPark} alt="Nairobi national park" />
-                    <h3>Nairobi National Park <br /> Entry from ksh. <br /> Activities: </h3>
+                    <h3>Nairobi National Park <br /> Entry from ksh.500 <br /> Activities: Animal Watching and Safaris</h3>
                 </div>
                 
                 <div className="home-card">
                     <img src={NatureTrail} alt="oloolua Nature Trail" />
-                    <h3>Oloolua Nature Trail <br /> Entry from ksh. <br /> Activities: Nature walks, picnics, site-seeing</h3>
+                    <h3>Oloolua Nature Trail <br /> Entry from ksh.700 <br /> Activities: Trail Running, Picnicking, Animal Watching</h3>
                 </div>
-            
+                
                 <div>
-                    <a href="placesToGo.html"><button className='toplaces'>See All</button></a>
+                    <a href="/places"><button className='toplaces'>See All</button></a>
+                    <br></br>
                 </div>
                 
                 <h2>Popular Activities</h2>
@@ -60,9 +61,6 @@ const HomePage = () => {
                 </div>
                 <div>
                 <a href="/activities"><button className='toactivities'>See All</button></a> 
-                <br></br>
-                <br></br>
-                <br></br>
                 </div>
             </section>
         </div>
